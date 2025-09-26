@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Blog - My Blog</title>
+    <meta name="description" content="Cybersecurity Insights and Updates - Latest cybersecurity insights, tutorials, and updates from My Blog.">
+    <meta name="keywords" content="cybersecurity blog, security consulting, penetration testing, cybersecurity insights, security tutorials">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cybersecurity Blog - My Blog">
+    <meta property="og:description" content="Cybersecurity Insights and Updates - Latest cybersecurity insights and updates.">
+    <meta property="og:url" content="https://example.com/blog/">
+    <meta property="og:site_name" content="My Blog">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Cybersecurity Blog - My Blog">
+    <meta name="twitter:description" content="Cybersecurity Insights and Updates - Latest cybersecurity insights and updates.">
+    <meta name="twitter:site" content="@mywebsiteurity">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://example.com/blog/">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Section */
+        .hero-header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 0 20px;
+            position: relative;
+            display: block;
+        }
+
+        .hero-image-container {
+            position: relative;
+            margin: 0 -20px 0 -20px;
+            padding: 0;
+            line-height: 0;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            display: block;
+            position: relative;
+            filter: brightness(1.45) contrast(1.1) saturate(1.05);
+            border-radius: 0 !important;
+            margin: 0;
+            padding: 0;
+            vertical-align: bottom;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(20, 40, 70, 0.4), rgba(30, 50, 80, 0.3));
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+            color: white;
+            overflow: hidden;
+            border-radius: 0 !important;
+        }
+
+        .hero-text {
+            flex: 1;
+            text-align: left;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 4.2rem;
+            font-weight: 400;
+            margin: 0;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 1px 1px 3px rgba(0, 0, 0, 1);
+            line-height: 1.1;
+            color: #ffffff;
+            position: relative;
+            border: none;
+            border-bottom: none;
+        }
+
+
+        /* Navigation Menu */
+        .navigation {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .nav-container {
+            margin: 0 -20px;
+            padding: 0;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #2c3e50;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-link {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link:last-child {
+            border-right: none;
+        }
+
+        .nav-link:hover {
+            background-color: #34495e;
+            color: #3498db;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background-color: #3498db;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            min-height: 50vh;
+            margin-top: 0;
+        }
+
+        /* Blog-specific styles */
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .blog-header h1 {
+            color: #2c3e50;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .blog-header h2 {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .posts-count {
+            color: #3498db;
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        .blog-posts {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-post-preview {
+            background: #fff;
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .blog-post-preview:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .blog-post-preview .post-title {
+            margin: 0 0 1rem 0;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .blog-post-preview .post-title a {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .blog-post-preview .post-title a:hover {
+            color: #3498db;
+        }
+
+        .post-meta {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .post-date {
+            color: #3498db;
+            font-weight: 500;
+        }
+
+        .post-author {
+            color: #7f8c8d;
+        }
+
+        .post-preview {
+            margin: 1.5rem 0;
+            line-height: 1.6;
+        }
+
+        .post-preview p {
+            color: #555;
+            text-align: left;
+            margin: 0;
+            font-size: 1.05rem;
+        }
+
+        .post-actions {
+            margin-top: 1.5rem;
+            text-align: right;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #3498db;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .read-more-btn:hover {
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+        }
+
+        /* No posts state */
+        .no-posts {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #7f8c8d;
+        }
+
+        .no-posts h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #34495e;
+        }
+
+        .no-posts p {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .no-posts code {
+            background: #f8f9fa;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            border: 1px solid #e9ecef;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-top: 3rem;
+            padding: 2rem 0;
+            width: 100%;
+            clear: both;
+            background-color: #f8f9fa;
+        }
+
+        footer p {
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .hero-header {
+                padding: 0 15px;
+            }
+
+            .hero-image-container {
+                margin: 0 -15px 0 -15px;
+                line-height: 0;
+            }
+
+            .hero-overlay {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px 10px;
+                justify-content: space-evenly;
+                align-items: center;
+                height: 100%;
+                box-sizing: border-box;
+            }
+
+            .hero-text {
+                text-align: center;
+                margin: 0;
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+                letter-spacing: 1px;
+                margin: 0;
+                line-height: 1;
+            }
+
+
+            .navigation {
+                padding: 0 15px;
+            }
+
+            .nav-container {
+                margin: 0 -15px;
+                flex-direction: column;
+                padding: 0;
+            }
+
+            .nav-link {
+                width: 100%;
+                padding: 15px;
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 1rem;
+            }
+
+            .nav-link:last-child {
+                border-bottom: none;
+            }
+
+            .container {
+                padding: 20px 15px 15px 15px;
+            }
+
+            .blog-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .blog-header h2 {
+                font-size: 1.1rem;
+            }
+
+            .blog-post-preview {
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .blog-post-preview .post-title a {
+                font-size: 1.5rem;
+            }
+
+            .post-actions {
+                text-align: center;
+            }
+
+            .no-posts {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Header -->
+    <header class="hero-header">
+        <div class="hero-image-container">
+            <img src="/images/4baf4bdd1f7fdb49783a8e85b20e4e15.jpg" alt="My Security" class="hero-image">
+            <div class="hero-overlay">
+                <div class="hero-text">
+                    <h1 class="hero-title">My Website</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <a href="/index.html" class="nav-link">Home</a>
+            <a href="/blog/" class="nav-link active">Blog</a>
+            <a href="/contact.html" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="blog-header">
+            <h1>Blog</h1>
+            <h2>Cybersecurity Insights and Updates</h2>
+            <div class="posts-count">1 articles available</div>
+        </div>
+
+        <div class="blog-posts">
+            
+                <article class="blog-post-preview">
+                    <h3 class="post-title">
+                        <a href="/blog/2025/09/21/Welcome-to-our-new-blog/">Welcome to Our New Blog!</a>
+                    </h3>
+                    <div class="post-meta">
+                        <span class="post-date">September 21, 2025</span>
+                        <span class="post-author">by Author Name</span>
+                    </div>
+                    <div class="post-preview">
+                        <p>We're excited to launch our new blog! Stay tuned for expert insights, tutorials, and the latest updates.</p>
+                    </div>
+                    <div class="post-actions">
+                        <a href="/blog/2025/09/21/Welcome-to-our-new-blog/" class="read-more-btn">Read More →</a>
+                    </div>
+                </article>
+            
+        </div>
+
+        <!-- No posts fallback -->
+        <div class="no-posts" style="display: none;">
+            <h3>No Blog Posts Yet</h3>
+            <p>We're working on bringing you valuable cybersecurity insights and updates.</p>
+            <p>Check back soon for our latest articles!</p>
+            <p><em>For administrators: Create markdown files in the <code>/blog-content</code> directory with format <code>YYYY-MM-DD-post-title.md</code></em></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><em>&copy; 2025 My Website. All rights reserved.</em></p>
+    </footer>
+
+    <!-- Show no-posts message if no posts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const blogPosts = document.querySelector('.blog-posts');
+            const noPosts = document.querySelector('.no-posts');
+            
+            if (!blogPosts || blogPosts.children.length === 0) {
+                if (noPosts) {
+                    noPosts.style.display = 'block';
+                }
+                if (blogPosts) {
+                    blogPosts.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
