@@ -1,6 +1,13 @@
 # Static Website Template
 
-This repository contains both the website content and build system for a static website and blog in a consolidated structure. This was originally created for the purpose of deploying a static website to Cloudflare Pages.
+Easy-peasy and free static website hosting via Cloudflare pages with blogging support. This is what was used to build the [CylentSec website](https://www.cylentsec.com).
+
+The benefits are:
+- No hosting costs (depending on Cloudflare's terms and conditions)
+- No CMS security updates
+- Supports easily creating new blog posts in Markdown format
+
+Note: You'll have to use search in your editor to replace all occurrences of "My Website" (copyright notices) and similar text for personalizing the branding, and also replace the header image with your own. 
 
 ## Repository Structure
 
